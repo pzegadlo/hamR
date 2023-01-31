@@ -17,6 +17,9 @@
 # Output files from R CMD check
 /*.Rcheck/
 
+# Project files
+.Rproj
+
 # RStudio files
 .Rproj.user/
 
@@ -37,3 +40,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# RDS files
+.rds
