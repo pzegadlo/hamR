@@ -5,8 +5,8 @@ require(parallel)
 require(doParallel)
 require(doRNG)
 
-source('HAMs.R')
-source('CalibrationMethods.R')
+source("HAMs.R")
+source("CalibrationMethods.R")
 
 BHoptim_min <- function(calib_vec, preset_vec, calib_names, preset_names, obs, burnin, W, tm) {
   
@@ -85,8 +85,8 @@ foreach(s = 1:30) %do% {
   }
   
   res <- data.frame(matrix(unlist(y), nrow = 30, ncol = 2+ncalib, byrow=TRUE))
-  colnames(res) = c('seed', 'gof', calib_names)
+  colnames(res) = c("seed", "gof", calib_names)
   
-  saveRDS(res, paste('res',s, '.rds', sep=""))
+  saveRDS(res, paste("res",s, ".rds", sep=""))
   
 }

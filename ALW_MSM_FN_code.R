@@ -6,8 +6,8 @@ require(doParallel)
 require(doRNG)
 require(parallel)
 
-source('HAMs.R')
-source('CalibrationMethods.R')
+source("HAMs.R")
+source("CalibrationMethods.R")
 
 calib_pars <- data.frame(cbind(0.0003, 0.0014, 0.03))
 colnames(calib_pars) <- c("a", "b", "sig0")
@@ -292,7 +292,7 @@ foreach(s = 1:30) %do% {
     }
     
     # save notebook for debugging and monitoring
-    # saveRDS(nbook, paste('nbook',s,'_',cnt,'.rds', sep=""))
+    # saveRDS(nbook, paste("nbook",s,"_",cnt,".rds", sep=""))
     
     lrow <- nrow(nbook)
     
@@ -308,8 +308,8 @@ foreach(s = 1:30) %do% {
   } # foreach loop end
   
   res = data.frame(matrix(unlist(y), nrow = 30, ncol = 5, byrow=TRUE))
-  colnames(res) = c('seed', 'gof', 'a', 'b', 'sig0')
+  colnames(res) = c("seed", "gof", "a", "b", "sig0")
   
-  saveRDS(res, paste('res',s, '.rds', sep=""))
+  saveRDS(res, paste("res",s, ".rds", sep=""))
   
 }
